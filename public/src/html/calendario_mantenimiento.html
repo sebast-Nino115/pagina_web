@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+
+ <header style="display: flex; justify-content: center; align-items: center; padding: 20px; background-color: linear-gradient(135deg, #1e3a8a, #8e44ad, #e0e0e0)">
+        <a href="../../index.html">
+            <img src="../images/LOGO.png" alt="PRAX Logo" style="width: 100px; height: auto;">
+        </a>
+    </header>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interfaz con Navbar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #333;
+            padding: 10px;
+            position: relative;
+        }
+        .navbar img {
+            position: absolute;
+            left: 20px;
+            width: 50px;
+            height: auto;
+        }
+        .navbar .logout-btn {
+            position: absolute;
+            right: 20px;
+            background: red;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .navbar .logout-btn:hover {
+            background: darkred;
+        }
+        .navbar button {
+            background: #555;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .navbar button:hover {
+            background: #777;
+        }
+        #content {
+            margin-top: 20px;
+            padding: 20px;
+        }
+        .bottom-section {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+            padding: 20px;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
+        }
+        .image-container img {
+            width: 800px;
+            cursor: pointer;
+        }
+        .bottom-section button {
+            width: 30%;
+            height: 150px;
+            background-size: cover;
+            background-position: center;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .bottom-section button:hover {
+            opacity: 0.8;
+        }
+
+        .selector-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        max-width: 800px;
+        margin: 20px auto;
+        text-align: left;
+    }
+    .selector-container label {
+        font-weight: bold;
+    }
+    .selector-container select,
+    .selector-container input,
+    .selector-container textarea {
+        width: 100%;
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+    }
+    .full-width {
+        grid-column: span 3;
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <button onclick="showContent('inicio')">Inicio</button>
+        <button onclick="showContent('quienesSomos')">Quiénes Somos</button>
+        <button onclick="showContent('dashboard')">Dashboard</button>
+        <button class="logout-btn" onclick="logout()">Cerrar Sesión</button>
+    </div>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Mantenimiento</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; background-color: #f4f4f4; }
+        .title-container { background-color: #1E3A8A; color: white; padding: 20px; font-size: 24px; font-weight: bold; }
+        .table-container { display: flex; justify-content: center; margin-top: 20px; }
+        table { width: 90%; border-collapse: collapse; background: white; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: center; }
+        th { background-color: #1E3A8A; color: white; }
+        .selector-container { margin-top: 20px; display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
+        select, input, textarea { padding: 8px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <div class="title-container">Gestión de Mantenimiento</div>
+
+    <!-- Imagen inicial -->
+    <div class="image-container" id="imageContainer">
+        <img src="C:\Users\danii\Downloads\newfire\newfire\public\src\images\calendario_mantenimiento.png" alt="Haga clic para continuar" onclick="showSelectors()">
+    </div>
+
+
+<div class="selector-container">
+    <div>
+        <label for="clienteSelector">Cliente:</label>
+        <select id="clienteSelector"></select>
+    </div>
+    
+    <div>
+        <label for="tecnicoSelector">Técnico:</label>
+        <select id="tecnicoSelector"></select>
+    </div>
+
+    <div>
+        <label for="estadoSelector">Estado:</label>
+        <select id="estadoSelector">
+            <option value="Completado">Completado</option>
+            <option value="En proceso">En proceso</option>
+            <option value="No iniciado">No iniciado</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="tareaSelector">Tarea:</label>
+        <select id="tareaSelector"></select>
+    </div>
+
+    <div>
+        <label for="fechaSelector">Fecha:</label>
+        <input type="date" id="fechaSelector">
+    </div>
+
+    <div>
+        <label for="comentario">Comentario:</label>
+        <textarea id="comentario" rows="2" cols="20" placeholder="Añadir comentario..."></textarea>
+    </div>
+
+    <div class="full-width">
+        <button onclick="addSelectedData()">Agregar</button>
+    </div>
+</div>
+
+    <div class="table-container">
+        <table id="maintenanceTable">
+            <thead>
+                <tr>
+                    <th>Cliente</th>
+                    <th>Técnico</th>
+                    <th>Estado</th>
+                    <th>Tarea</th>
+                    <th>Fecha</th>
+                    <th>Comentario</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script>
+        const clientes = ["Supermercado D1 - Calle 80", "Supermercado D1 - Av. Caracas", "Supermercado D1 - Suba"];
+        const tecnicos = ["Carlos Pérez", "Ana Gómez", "Luis Ramírez"];
+        const tareas = ["Revisión de banda transportadora", "Mantenimiento de nevera", "Calibración de caja registradora"];
+        const datosMantenimiento = [];
+
+        function populateSelectors() {
+            const clienteSelector = document.getElementById("clienteSelector");
+            const tecnicoSelector = document.getElementById("tecnicoSelector");
+            const tareaSelector = document.getElementById("tareaSelector");
+
+            clientes.forEach(cliente => {
+                const option = document.createElement("option");
+                option.value = cliente;
+                option.textContent = cliente;
+                clienteSelector.appendChild(option);
+            });
+
+            tecnicos.forEach(tecnico => {
+                const option = document.createElement("option");
+                option.value = tecnico;
+                option.textContent = tecnico;
+                tecnicoSelector.appendChild(option);
+            });
+
+            tareas.forEach(tarea => {
+                const option = document.createElement("option");
+                option.value = tarea;
+                option.textContent = tarea;
+                tareaSelector.appendChild(option);
+            });
+        }
+
+        function addSelectedData() {
+            const cliente = document.getElementById("clienteSelector").value;
+            const tecnico = document.getElementById("tecnicoSelector").value;
+            const estado = document.getElementById("estadoSelector").value;
+            const tarea = document.getElementById("tareaSelector").value;
+            const fecha = document.getElementById("fechaSelector").value;
+            const comentario = document.getElementById("comentario").value;
+
+            if (!cliente || !tecnico || !estado || !tarea || !fecha) {
+                alert("Por favor completa todos los campos obligatorios.");
+                return;
+            }
+
+            const newData = { cliente, tecnico, estado, tarea, fecha, comentario };
+            datosMantenimiento.push(newData);
+            updateTable();
+        }
+
+        function updateTable() {
+            const tableBody = document.querySelector("#maintenanceTable tbody");
+            tableBody.innerHTML = "";
+
+            datosMantenimiento.forEach(item => {
+                const row = document.createElement("tr");
+                row.innerHTML = `<td>${item.cliente}</td><td>${item.tecnico}</td><td>${item.estado}</td><td>${item.tarea}</td><td>${item.fecha}</td><td>${item.comentario}</td>`;
+                tableBody.appendChild(row);
+            });
+        }
+
+        populateSelectors();
+    </script>
+
+<script>
+    function showContent(page) {
+        if (page === 'inicio') {
+            window.location.href = "file:///C:/Users/danii/Downloads/newfire/newfire/public/index.html";
+        } else if (page === 'quienesSomos') {
+            window.location.href = "file:///C:/Users/danii/Downloads/newfire/newfire/public/src/html/quienes_somos.html";
+        }else if (page === 'dashboard') {
+            window.location.href = "file:///C:/Users/danii/Downloads/newfire/newfire/public/src/html/prueba1admi.html";
+        }
+    }
+</script>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRAX - Nuestros Servicios</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style_servicios.css">
+    <link rel="icon" type="image/png" href="../src/images/LOGOCORT.png">
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>¿Qué nos diferencia?</h3>
+                <p>Somos una empresa dedicada a las soluciones del control de acceso peatonal Automático en Colombia.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Nuestros Servicios</h3>
+                <ul>
+                    <li><a href="#">Reportar un Problema</a></li>
+                    <li><a href="#">Mantenimiento Preventivo</a></li>
+                    <li><a href="#">Automatismos Peatonales</a></li>
+                    <li><a href="#">Certificación de Puertas</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Soluciones</h3>
+                <ul>
+                    <li><a href="#">Pasillos Motorizados</a></li>
+                    <li><a href="#">Control de Acceso Vehicular</a></li>
+                    <li><a href="#">Control de Acceso de Largo Alcance</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Bogotá D.C</h3>
+                <ul>
+                    <li>ventas@osmiotech.com</li>
+                    <li>ingenieria@osmiotech.com</li>
+                    <li>Tel: 320 8950312</li>
+                    <li>PBX: 601-7654202</li>
+                    <li>Calle 76 # 27b-12 Bogotá Colombia</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Páginas</h3>
+                <ul>
+                    <li><a href="#">Registro de Empresa</a></li>
+                    <li><a href="#">Trabaja con nosotros</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>Somos una empresa dedicada a las soluciones del control de acceso peatonal Automático en Colombia.</p>
+                <div class="contact-icons">
+                    <img src="../images/phone_icon.png" alt="Teléfono">
+                    <img src="../images/email_icon.png" alt="Correo">
+                </div>
+            </div>
+        </div>
+        <p>&copy; 2025 Tu Empresa. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

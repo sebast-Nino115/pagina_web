@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRAX - Monitoreo en Tiempo Real</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style_mantenimientopreventivo.css">
+    <link rel="icon" type="image/png" href="../images/LOGOCORT.png">
+</head>
+<body>
+
+    <header class="hidden">
+        <div class="top-bar">
+            <a href="../../index.html">
+                <img src="../images/LOGO.png" alt="PRAX Logo" class="logo">
+            </a>
+            <nav class="nav-links">
+                <form action="search.html" method="GET" class="search-form">
+                    <input type="text" name="query" placeholder="Buscar...">
+                    <button type="submit"><img src="../images/lupa.png" alt="Buscar" class="search-icon"></button>
+                </form>
+                <a href="../html/contactos.html"><img src="../images/sobre.png" alt="Icono de Contacto">Contacto</a>
+                <a href="#"><img src="../images/mundo.png" alt="Icono de Lenguaje">Lenguaje</a>
+                <a href="#"><img src="../images/usuario.png" alt="Icono de Log In">Log In</a> 
+            </nav>
+        </div>
+        
+        <nav class="main-menu">
+            <div class="dropdown">
+                <button class="dropbtn">Productos</button>
+                <div class="dropdown-content">
+                    <a href="../html/componentes.html">Componentes de Puertas</a>
+                    <a href="../html/software_predictivo.html">Software Predictivo</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Servicios</button>
+                <div class="dropdown-content">
+                    <a href="servicios.html">Nuestros Servicios</a>
+                    <a href="../html/mantenimiento_preventivo.html">Monitoreo en Tiempo Real</a>
+                    <a href="#">Consultoría</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Compañía</button>
+                <div class="dropdown-content">
+                    <a href="../html/quienes_somos.html">Quiénes Somos</a>
+                    <a href="../html/blog.html">Blog</a>
+                    <a href="../html/contactos.html">Contacto</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+     <!-- Sección de encabezado con imagen más pequeña -->
+     <section class="intro-section">
+        <img src="../images/mantenimiento_tiemporeal.jpg" alt="Mantenimiento en Tiempo Real" class="intro-image">
+        <div class="intro-text">
+            <h1>Mantenimiento en Tiempo Real</h1>
+            <p>Monitoreo constante y análisis de datos para garantizar el funcionamiento óptimo de nuestras puertas automáticas.</p>
+        </div>
+    </section>
+      <!-- Contenido de la sección de Monitoreo en Tiempo Real -->
+      <div class="background-animation">
+        <div class="node" style="top: 50px; left: 100px;"></div>
+        <div class="node" style="top: 200px; left: 300px;"></div>
+        <!-- Agrega más nodos según sea necesario -->
+    </div>
+
+    <div class="dashboard">
+        <div class="chart-container" id="velocidad-apertura">
+            <h3>Velocidad de Apertura</h3>
+            <canvas id="chart1" class="chart"></canvas>
+            <div class="dynamic-value" id="valor-velocidad">0 m/s</div>
+            <div class="analysis-text" id="analysis-velocidad">Analizando...</div>
+        </div>
+        <div class="chart-container" id="distancia-detectada">
+            <h3>Distancia Detectada</h3>
+            <canvas id="chart2" class="chart"></canvas>
+            <div class="dynamic-value" id="valor-distancia">0 cm</div>
+            <div class="analysis-text" id="analysis-distancia">Analizando...</div>
+        </div>
+        <div class="chart-container" id="temperatura-motor">
+            <h3>Temperatura del Motor</h3>
+            <canvas id="chart3" class="chart"></canvas>
+            <div class="dynamic-value" id="valor-temperatura">0 °C</div>
+            <div class="analysis-text" id="analysis-temperatura">Analizando...</div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="hidden">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>¿Qué nos diferencia?</h3>
+                <p>Somos una empresa dedicada a las soluciones del control de acceso peatonal Automático en Colombia.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Nuestros Servicios</h3>
+                <ul>
+                    <li><a href="#">Reportar un Problema</a></li>
+                    <li><a href="#">Mantenimiento Preventivo</a></li>
+                    <li><a href="#">Automatismos Peatonales</a></li>
+                    <li><a href="#">Certificación de Puertas</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Soluciones</h3>
+                <ul>
+                    <li><a href="#">Pasillos Motorizados</a></li>
+                    <li><a href="#">Control de Acceso Vehicular</a></li>
+                    <li><a href="#">Control de Acceso de Largo Alcance</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Bogotá D.C</h3>
+                <ul>
+                    <li>ventas@osmiotech.com</li>
+                    <li>ingenieria@prax.com</li>
+                    <li>Tel: 320 8950312</li>
+                    <li>PBX: 601-7654202</li>
+                    <li>Calle 76 # 27b-12 Bogotá Colombia</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Páginas</h3>
+                <ul>
+                    <li><a href="#">Registro de Empresa</a></li>
+                    <li><a href="#">Trabaja con nosotros</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>Somos una empresa dedicada a las soluciones del control de acceso peatonal Automático en Colombia.</p>
+                <div class="contact-icons">
+                    <img src="../images/telefono.png" alt="Teléfono">
+                    <img src="../images/gmail.png" alt="Correo">
+                </div>
+            </div>
+        </div>
+        <p>&copy; 2025 PRAX. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script src="../javascript/mantenimiento.js"></script>
+    <script src="../javascript/search.js"></script>
+</body>
+</html>

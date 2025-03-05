@@ -1,0 +1,64 @@
+/* Paleta de colores */
+:root {
+    --color-fondo: #0e0e0e;   /* Negro */
+    --color-texto: #ffffff;   /* Blanco */
+    --color-primario: #2979ff; /* Azul no muy oscuro */
+    --color-borde: #2979ff;
+    --color-boton: #2979ff;
+    --color-boton-hover: #1e5bbf;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Fondo y texto */
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Contenedor principal */
+.login-container {
+    text-align: center;
+    width: 350px;
+}
+
+/* Título */
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Formulario */
+form {
+    border: 2px solid var(--color-borde);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+label {
+    display: block;
+    font-size: 1.2rem;
+    margin: 10px 0 5px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-bottom: 2px solid var(--color-borde);
+    background: transparent;
+    color: var(--color-texto);
+    outline: none;
+    margin-bottom: 15px;
+    text-alig

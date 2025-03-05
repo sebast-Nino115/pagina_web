@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRAX - Cotizaciones</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/Formulario.css">
+    <link rel="icon" type="image/png" href="../images/LOGOCORT.png">
+</head>
+<body>
+    <!-- Animación de apertura de puerta -->
+    <div id="door-animation">
+        <div class="door left-door"></div>
+        <div class="door right-door"></div>
+    </div>
+
+    <header class="hidden">
+        <div class="top-bar">
+            <a href="../../index.html">
+                <img src="../images/LOGO.png" alt="PRAX Logo" class="logo">
+            </a>
+            <nav class="nav-links">
+                <form action="search.html" method="GET" class="search-form">
+                    <input type="text" name="query" placeholder="Buscar...">
+                    <button type="submit"><img src="../images/lupa.png" alt="Buscar" class="search-icon"></button>
+                </form>
+                <a href="../html/contactos.html"><img src="../images/sobre.png" alt="Icono de Contacto">Contacto</a>
+                <a href="#"><img src="../images/mundo.png" alt="Icono de Lenguaje">Lenguaje</a>
+                <a href="#"><img src="../images/usuario.png" alt="Icono de Log In">Log In</a> 
+            </nav>
+        </div>
+        
+        <nav class="main-menu">
+            <div class="dropdown">
+                <button class="dropbtn">Productos</button>
+                <div class="dropdown-content">
+                    <a href="../html/componentes.html">Componentes de Puertas</a>
+                    <a href="../html/software_predictivo.html">Software Predictivo</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Servicios</button>
+                <div class="dropdown-content">
+                    <a href="servicios.html">Nuestros Servicios</a>
+                    <a href="../html/mantenimiento_preventivo.html">Monitoreo en Tiempo Real</a>
+                    <a href="#">Consultoría</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Compañía</button>
+                <div class="dropdown-content">
+                    <a href="../html/quienes_somos.html">Quiénes Somos</a>
+                    <a href="../html/blog.html">Blog</a>
+                    <a href="../html/contactos.html">Contacto</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="hidden">
+        <section id="cotizaciones">
+            <h2>Formulario de Cotización</h2>
+            <div class="form-card">
+                <form action="/submit-cotizacion" method="post">
+                    <!-- Paso 1 -->
+                    <fieldset>
+                        <legend>PASO 1: INDIQUE LA SIGUIENTE INFORMACIÓN DE SUS PUERTAS</legend>
+                        <label for="cantidad-puertas">Cantidad de Puertas Automáticas</label>
+                        <input type="number" id="cantidad-puertas" name="cantidad-puertas" required>
+                    </fieldset>
+
+                    <!-- Paso 2 -->
+                    <fieldset>
+                        <legend>PASO 2: SELECCIONE EL TIPO DE SERVICIO QUE REQUIERE</legend>
+                        <label for="tipo-servicio">Seleccione el tipo de servicio que requiere (opcional)</label>
+                        <select id="tipo-servicio" name="tipo-servicio">
+                            <option value="mantenimiento-preventivo">Mantenimiento Preventivo</option>
+                            <option value="mantenimiento-correctivo">Mantenimiento Correctivo</option>
+                            <option value="diagnostico">Diagnostico</option>
+                        </select>
+                    </fieldset>
+                    <!-- Paso 3 -->
+                     <fieldset>
+                       <legend>PASO 3: SELECCIONE EL TIPO DE PUERTA</legend>
+                         <label for="tipo-puerta">Nombre del Producto</label>
+                      <select id="tipo-puerta" name="tipo-puerta" required>
+                        <option value="puerta-vehicular-batiente">Puerta Vehicular Batiente</option>
+                        <option value="puerta-vehicular-deslizante">Puerta Vehicular Deslizante</option>
+                        <option value="cortina-enrollable">Cortina Enrollable</option>
+                        <option value="puerta-peatonal-automatica">Puerta Peatonal Automática</option>
+                        <option value="puerta-peatonal-manual">Puerta Peatonal Manual</option>
+                        <option value="otro">Otro</option>
+                       </select>
+                     </fieldset>
+
+
+                   
+
+                    <!-- Paso 4 -->
+                    <fieldset>
+                        <legend>PASO 4: INTRODUZCA SUS DATOS DE CONTACTO</legend>
+                        <label for="email">Email*</label>
+                        <input type="email" id="email" name="email" required>
+
+                        <label for="nombre">Nombre*</label>
+                        <input type="text" id="nombre" name="nombre" required>
+
+                        <label for="apellido">Apellido</label>
+                        <input type="text" id="apellido" name="apellido">
+
+                        <label for="telefono">Teléfono*</label>
+                        <input type="tel" id="telefono" name="telefono" required>
+
+                        <label for="empresa">Nombre de la empresa o conjunto*</label>
+                        <input type="text" id="empresa" name="empresa" required>
+
+                        <label for="ciudad">Ciudad*</label>
+                        <input type="text" id="ciudad" name="ciudad" required>
+                    </fieldset>
+
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="hidden">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>¿Qué nos diferencia?</h3>
+                <p>Somos una empresa dedicada a las soluciones del control de acceso peatonal Automático en Colombia.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Nuestros Servicios</h3>
+                <ul>
+                    <li><a href="#">Reportar un Problema</a></li>
+                    <li><a href="#">Mantenimiento Preventivo</a></li>
+                    <li><a href="#">Automatismos Peatonales</a></li>
+                    <li><a href="#">Certificación de Puertas</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Soluciones</h3>
+                <ul>
+                    <li><a href="#">Pasillos Motorizados</a></li>
+                    <li><a href="#">Control de Acceso Vehicular</a></li>
+                    <li><a href="#">Control de Acceso de Largo Alcance</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Bogotá D.C</h3>
+                <ul>
+                    <li>ventas@osmiotech.com</li>
+                    <li>ingenieria@prax.com</li>
+                    <li>Tel: 320 8950312</li>
+                    <li>PBX: 601-7654202</li>
+                    <li>Calle 76 # 27b-12 Bogotá Colombia</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Páginas</h3>
+                <ul>
+                    <li><a href="#">Registro de Empresa</a></li>
+                    <li><a href="#">Trabaja con nosotros</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>Somos una empresa dedicada a las soluciones del control de acceso peatonal Automático en Colombia.</p>
+                <div class="contact-icons">
+                    <img src="../images/telefono.png" alt="Teléfono">
+                    <img src="../images/gmail.png" alt="Correo">
+                </div>
+            </div>
+        </div>
+        <p>&copy; 2025 PRAX. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="../javascript/scriptcotizaciones.js"></script>
+    <script src="../javascript/search.js"></script>
+</body>
+</html>

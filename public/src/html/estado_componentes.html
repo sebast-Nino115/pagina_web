@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interfaz con Navbar</title>
+
+<body style="margin: 0; padding: 0; text-align: center;">
+
+    <header style="display: flex; justify-content: center; align-items: center; padding: 20px; background-color: linear-gradient(135deg, #1e3a8a, #8e44ad, #e0e0e0)">
+        <a href="../../index.html">
+            <img src="../images/LOGO.png" alt="PRAX Logo" style="width: 100px; height: auto;">
+        </a>
+    </header>
+
+</body>
+</head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interfaz con Navbar</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: white; /* Fondo blanco */
+    color: #333;
+}
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #333;
+            padding: 10px;
+            position: relative;
+        }
+        .navbar img {
+            position: absolute;
+            left: 20px;
+            width: 50px;
+            height: auto;
+        }
+        .navbar .logout-btn {
+            position: absolute;
+            right: 20px;
+            background: red;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .navbar .logout-btn:hover {
+            background: darkred;
+        }
+        .navbar button {
+            background: #555;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .navbar button:hover {
+            background: #777;
+        }
+        
+        .dashboard, .table-container, .selector-container, .chart-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+        
+        .chart-container {
+            flex: 1 1 30%;
+            background: linear-gradient(135deg, #3a3d98, #8e44ad);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px;
+            color: white;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .title-container {
+            font-size: 2em;
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #3a3d98, #8e44ad);
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .content {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .table-container table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .table-container th, .table-container td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        
+        .table-container th {
+            background-color: #3a3d98;
+            color: white;
+        }
+        
+        .status-ok {
+            color: #27ae60;
+        }
+        
+        .status-error {
+            color: #e74c3c;
+        }
+        
+        .selector-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .selector-container select {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+        }
+        
+        .dynamic-value, .analysis-text {
+            margin-top: 10px;
+            font-size: 1.2em;
+        }
+        
+        .dynamic-value {
+            font-weight: bold;
+        }
+
+
+    </style>
+
+    <div class="navbar">
+        <button onclick="showContent('inicio')">Inicio</button>
+        <button onclick="showContent('quienesSomos')">Quiénes Somos</button>
+        <button onclick="showContent('dashboard')">Dashboard</button>
+        <button class="logout-btn" onclick="logout()">Cerrar Sesión</button>
+    </div>
+</head>
+<body>
+    <div class="title-container">Estado de Componentes</div>
+    <div class="content">
+        <p>Analiza sensores de movimiento, motores, placas electrónicas y más.</p>
+    </div>
+    
+    <div class="dashboard">
+        <div class="chart-container" id="Sensores de movimiento">
+            <h3>Sensores de movimiento</h3>
+            <canvas id="chart1" class="chart"></canvas>
+            <div class="dynamic-value" id="valor Sensores de movimiento">0 m/s</div>
+            <div class="analysis-text" id="analysis Sensores de movimiento">Analizando...</div>
+        </div>
+         <div class="chart-container" id="Motores y actuadores">
+            <h3>Motores y actuadores</h3>
+            <canvas id="chart1" class="chart"></canvas>
+            <div class="dynamic-value" id="valor-velocidad">0 m/s</div>
+            <div class="analysis-text" id="analysis-velocidad">Analizando...</div>
+        </div>
+        <div class="chart-container" id="Rodamientos y guías">
+            <h3>Rodamientos y guías</h3>
+            <canvas id="chart2" class="chart"></canvas>
+            <div class="dynamic-value" id="valor Rodamientos y guías">0 cm</div>
+            <div class="analysis-text" id="analysis Rodamientos y guías">Analizando...</div>
+        </div>
+        <div class="chart-container" id="Placas electrónicas y controladores">
+            <h3>Placas electrónicas y controladores</h3>
+            <canvas id="chart3" class="chart"></canvas>
+            <div class="dynamic-value" id="Estado de Placas electrónicas y controladores">0 °C</div>
+            <div class="analysis-text" id="analysis Placas electrónicas y controladores">Analizando...</div>
+        </div>
+       <div class="chart-container" id="Fuente de alimentación y cables">
+            <h3>Fuente de alimentación y cables</h3>
+            <canvas id="chart3" class="chart"></canvas>
+            <div class="dynamic-value" id="Estado de Fuente de alimentación y cables">0 °C</div>
+            <div class="analysis-text" id="analysis Fuente de alimentación y cables">Analizando...</div>
+        </div>
+        <div class="chart-container" id="Baterías de respaldo">
+            <h3>Baterías de respaldo</h3>
+            <canvas id="chart3" class="chart"></canvas>
+            <div class="dynamic-value" id="Estado de Baterías de respaldo">0 °C</div>
+            <div class="analysis-text" id="analysis Baterías de respaldo">Analizando...</div>
+        </div>
+        <div class="chart-container" id="Sellos y gomas de aislamiento">
+            <h3>Sellos y gomas de aislamiento"</h3>
+            <canvas id="chart3" class="chart"></canvas>
+            <div class="dynamic-value" id="Estado de Sellos y gomas de aislamiento">0 °C</div>
+            <div class="analysis-text" id="analysis Sellos y gomas de aislamiento">Analizando...</div>
+        </div>
+        <div class="chart-container" id="Mecanismo de seguridad">
+            <h3>Mecanismo de seguridad</h3>
+            <canvas id="chart3" class="chart"></canvas>
+            <div class="dynamic-value" id="Mecanismo de seguridad">0 °C</div>
+            <div class="analysis-text" id="Mecanismo de seguridad">Analizando...</div>
+        </div>
+
+    </div>
+
+
+<script>
+    function showContent(page) {
+        if (page === 'inicio') {
+            window.location.href = "file:///C:/Users/danii/Downloads/newfire/newfire/public/index.html";
+        } else if (page === 'quienesSomos') {
+            window.location.href = "file:///C:/Users/danii/Downloads/newfire/newfire/public/src/html/quienes_somos.html";
+        }else if (page === 'dashboard') {
+            window.location.href = "file:///C:/Users/danii/Downloads/newfire/newfire/public/src/html/prueba1admi.html";
+        }
+    }
+</script>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRAX - Nuestros Servicios</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style_servicios.css">
+    <link rel="icon" type="image/png" href="../src/images/LOGOCORT.png">
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>¿Qué nos diferencia?</h3>
+                <p>Somos una empresa dedicada a las soluciones del control de acceso peatonal Automático en Colombia.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Nuestros Servicios</h3>
+                <ul>
+                    <li><a href="#">Reportar un Problema</a></li>
+                    <li><a href="#">Mantenimiento Preventivo</a></li>
+                    <li><a href="#">Automatismos Peatonales</a></li>
+                    <li><a href="#">Certificación de Puertas</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Soluciones</h3>
+                <ul>
+                    <li><a href="#">Pasillos Motorizados</a></li>
+                    <li><a href="#">Control de Acceso Vehicular</a></li>
+                    <li><a href="#">Control de Acceso de Largo Alcance</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Bogotá D.C</h3>
+                <ul>
+                    <li>ventas@osmiotech.com</li>
+                    <li>ingenieria@osmiotech.com</li>
+                    <li>Tel: 320 8950312</li>
+                    <li>PBX: 601-7654202</li>
+                    <li>Calle 76 # 27b-12 Bogotá Colombia</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Páginas</h3>
+                <ul>
+                    <li><a href="#">Registro de Empresa</a></li>
+                    <li><a href="#">Trabaja con nosotros</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>Somos una empresa dedicada a las soluciones del control de acceso peatonal Automático en Colombia.</p>
+                <div class="contact-icons">
+                    <img src="../images/phone_icon.png" alt="Teléfono">
+                    <img src="../images/email_icon.png" alt="Correo">
+                </div>
+            </div>
+        </div>
+        <p>&copy; 2025 Tu Empresa. Todos los derechos reservados.</p>
+    </footer>
+    
+</body>
+</html>

@@ -1,0 +1,270 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #ffffff 2%, #b9b9b9 98%);
+    overflow-x: hidden;
+}
+
+/* Header */
+header {
+    background: linear-gradient(to right, #ffffff 10%, #e0e0e0 90%);
+    padding: 0;
+}
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: 80px;
+    padding: 0;
+}
+
+.logo {
+    width: 140px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    margin-left: 10px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #0072ce;
+}
+
+
+
+.logo {
+    width: 140px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+
+#hero {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+#hero img {
+    width: 100%;
+    height: auto;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+}
+
+#servicios {
+    padding: 2rem;
+    text-align: center;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+.main-card {
+    background-color: #f9f9f9;
+    padding: 40px;
+    border-radius: 12px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sub-card {
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    flex: 1;
+    border-radius: 12px;
+    border: 1px solid #0078d4;
+    max-width: 48%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sub-card img {
+    width: 100%;
+    height: 200px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 1rem;
+}
+
+.sub-card h3 {
+    color: #0044cc;
+}
+
+.sub-card p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.sub-card button {
+    background-color: #0072ce;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.sub-card button:hover {
+    background-color: #005bb5;
+}
+
+footer {
+    background: #2c2c2c;
+    color: white;
+    padding: 40px 0;
+}
+
+
+/* Tarjeta de Introducción */
+#intro-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    background: url('../images/mantenimientoef.jpg') no-repeat center center/cover;
+    margin: 20px 0;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    text-align: center;
+    position: relative;
+}
+
+.intro-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(128, 128, 128, 0.5), rgba(128, 128, 128, 0));
+    border-radius: 12px;
+}
+
+.intro-card-text {
+    max-width: 800px;
+    position: relative;
+    color: white;
+    z-index: 1;
+}
+
+.intro-card-text h2 {
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.intro-card-text p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+
+/* Servicios Section */
+#servicios {
+    padding: 2rem;
+    text-align: center;
+}
+
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+}
+
+.footer-section h3 {
+    border-bottom: 2px solid #0072ce;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.footer-section p {
+    font-size: 14px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #0072ce;
+}
+
+.contact-icons img {
+    width: 24px;
+    height: 24px;
+    margin: 0 10px;
+}
+
+@media (max-width: 768px) {
+    .main-card {
+        flex-direction: column;
+    }
+
+    .sub-card {
+        max-width: 100%;
+    }
+}

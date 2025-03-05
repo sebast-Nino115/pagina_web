@@ -1,0 +1,104 @@
+/* Estilos para la página de contacto */
+#contacto {
+    padding: 50px 20px;
+    background: linear-gradient(to bottom right, rgba(89, 0, 206, 0.8), rgba(255, 255, 255, 0.5));
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    margin: 40px auto;
+    text-align: left;
+}
+
+#contacto h2 {
+    font-size: 28px;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.contact-info h3 {
+    font-size: 24px;
+    color: #0072ce;
+}
+
+.contact-info p {
+    margin-bottom: 20px;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-info ul li {
+    margin-bottom: 10px;
+}
+
+.contact-info ul li a {
+    color: #0072ce;
+    text-decoration: none;
+}
+
+.contact-form {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form fieldset {
+    border: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.contact-form legend {
+    font-size: 20px;
+    color: #0072ce;
+    margin-bottom: 10px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea {
+    width: calc(100% - 22px);
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.contact-form button {
+    background-color: #0072ce;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    width: 100%;
+}
+
+.contact-form button:hover {
+    background-color: #005bb5;
+}

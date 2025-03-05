@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRAX - Contacto</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style_contactos.css">
+    <link rel="icon" type="image/png" href="../images/LOGOCORT.png">
+</head>
+<body>
+    <!-- Animación de apertura de puerta -->
+    <div id="door-animation">
+        <div class="door left-door"></div>
+        <div class="door right-door"></div>
+    </div>
+
+    <header>
+        <div class="top-bar">
+            <a href="../../index.html">
+                <img src="../images/LOGO.png" alt="PRAX Logo" class="logo">
+            </a>
+            <nav class="nav-links">
+                <form action="search.html" method="GET" class="search-form">
+                    <input type="text" name="query" placeholder="Buscar...">
+                    <button type="submit"><img src="../images/lupa.png" alt="Buscar" class="search-icon"></button>
+                </form>
+                <a href="../html/contactos.html">><img src="../images/sobre.png" alt="Icono de Contacto">Contacto</a>
+                <a href="#"><img src="../images/mundo.png" alt="Icono de Lenguaje">Lenguaje</a>
+                <a href="#"><img src="../images/usuario.png" alt="Icono de Log In">Log In</a>
+            </nav>
+        </div>
+        
+        
+        <nav class="main-menu">
+            <div class="dropdown">
+                <button class="dropbtn">Productos</button>
+                <div class="dropdown-content">
+                    <a href="../html/componentes.html">Componentes de Puertas</a>
+                    <a href="../html/software_predictivo.html">Software Predictivo</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Servicios</button>
+                <div class="dropdown-content">
+                    <a href="servicios.html">Nuestros Servicios</a>
+                    <a href="../html/mantenimiento_preventivo.html">Monitoreo en Tiempo Real</a>
+                    <a href="#">Consultoría</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Compañía</button>
+                <div class="dropdown-content">
+                    <a href="../html/quienes_somos.html">Quiénes Somos</a>
+                    <a href="../html/blog.html">Blog</a>
+                    <a href="../html/contactos.html">Contacto</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="hidden">
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <div class="contact-card">
+                <div class="contact-info">
+                    <h3>¿Cómo podemos ayudarte?</h3>
+                    <p>En PRAX, estamos aquí para resolver tus dudas y atender tus necesidades. Completa el formulario de contacto y nuestro equipo te responderá a la mayor brevedad posible.</p>
+                    <ul>
+                        <li>Email: <a href="mailto:info@prax.com">info@prax.com</a></li>
+                        <li>Teléfono: <a href="tel:+123456789">+123 456 789</a></li>
+                        <li>Dirección: Calle 76 # 27b-12, Bogotá, Colombia</li>
+                    </ul>
+                </div>
+                <div class="contact-form">
+                    <form action="/submit-contact" method="post">
+                        <fieldset>
+                            <legend>Formulario de Contacto</legend>
+                            <label for="nombre">Nombre*</label>
+                            <input type="text" id="nombre" name="nombre" required>
+
+                            <label for="email">Email*</label>
+                            <input type="email" id="email" name="email" required>
+
+                            <label for="telefono">Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono">
+
+                            <label for="mensaje">Mensaje*</label>
+                            <textarea id="mensaje" name="mensaje" rows="5" required                            ></textarea>
+
+                            <button type="submit">Enviar</button>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="hidden">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>¿Qué nos diferencia?</h3>
+                <p>Somos una empresa dedicada a las soluciones del control de acceso peatonal Automático en Colombia.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Nuestros Servicios</h3>
+                <ul>
+                    <li><a href="#">Reportar un Problema</a></li>
+                    <li><a href="#">Mantenimiento Preventivo</a></li>
+                    <li><a href="#">Automatismos Peatonales</a></li>
+                    <li><a href="#">Certificación de Puertas</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Soluciones</h3>
+                <ul>
+                    <li><a href="#">Pasillos Motorizados</a></li>
+                    <li><a href="#">Control de Acceso Vehicular</a></li>
+                    <li><a href="#">Control de Acceso de Largo Alcance</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Bogotá D.C</h3>
+                <ul>
+                    <li>ventas@osmiotech.com</li>
+                    <li>ingenieria@prax.com</li>
+                    <li>Tel: 320 8950312</li>
+                    <li>PBX: 601-7654202</li>
+                    <li>Calle 76 # 27b-12 Bogotá Colombia</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Páginas</h3>
+                <ul>
+                    <li><a href="#">Registro de Empresa</a></li>
+                    <li><a href="#">Trabaja con nosotros</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>Somos una empresa dedicada a las soluciones del control de acceso peatonal Automático en Colombia.</p>
+                <div class="contact-icons">
+                    <img src="../images/telefono.png" alt="Teléfono">
+                    <img src="../images/gmail.png" alt="Correo">
+                </div>
+            </div>
+        </div>
+        <p>&copy; 2025 PRAX. Todos los derechos reservados.</p>
+    </footer>
+    <script src="../javascript/search.js"></script>
+</body>
+</html>

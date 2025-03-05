@@ -1,0 +1,426 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #ffffff 2%, #b9b9b9 98%);
+    overflow-x: hidden;
+}
+
+/* Animación de apertura de puerta */
+#door-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    background-color: #fff;
+}
+
+.door {
+    width: 50%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 2px solid #444;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    z-index: 11;
+    transition: transform 2s ease-in-out;
+}
+
+.door.left-door {
+    left: 0;
+    transform-origin: left;
+}
+
+.door.right-door {
+    right: 0;
+    transform-origin: right;
+}
+
+.door::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 80px;
+    background-color: #444;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 5px;
+}
+
+.door.left-door::before {
+    right: 20px;
+}
+
+.door.right-door::before {
+    left: 20px;
+}
+
+body.loaded .door.left-door {
+    transform: translateX(-100%);
+}
+
+body.loaded .door.right-door {
+    transform: translateX(100%);
+}
+
+body.loaded #door-animation {
+    display: none;
+}
+
+/* Ocultar contenido hasta que la animación termine */
+.hidden {
+    display: none;
+}
+
+/* Estilos del Header */
+header {
+    background: linear-gradient(to right, #ffffff 10%, #e0e0e0 90%);
+    padding: 0;
+    z-index: 9;
+    position: relative;
+}
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: 80px;
+    padding: 0;
+}
+
+.logo {
+    width: 140px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    margin-left: 10px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #0072ce;
+}
+/* mantenimiento tarjeras 2x2*/
+/* Nueva sección de soluciones */
+#soluciones {
+    position: relative;
+    text-align: center;
+    color: white;
+    padding: 50px 0;
+    background-color: #f0f0f0; /* Fondo gris */
+}
+
+.background-overlay {
+    position: relative;
+    text-align: center;
+    color: white;
+    padding: 50px 0;
+    background: url('../images/edificio.jpg') no-repeat center center; /* Imagen de fondo */
+    background-size: cover;
+    margin: 0 80px; /* Márgenes laterales */
+}
+
+#soluciones h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    z-index: 2;
+    position: relative;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Sombra para el texto */
+}
+
+#soluciones h3 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    z-index: 2;
+    position: relative;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Sombra para el texto */
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Alineación en cuadrícula 2x2 */
+    gap: 10px; /* Espacio reducido entre tarjetas */
+    z-index: 2;
+    position: relative;
+    justify-content: center; /* Centrar las tarjetas */
+    margin-left: 120px;
+}
+
+.card {
+    background-color: rgba(89, 0, 206, 0.8); /* Fondo morado con transparencia */
+    border-radius: 10px; /* Bordes redondeados */
+    width: 350px; /* Ancho de la tarjeta */
+    height: 180px; /* Altura fija */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.card-icon {
+    font-size: 40px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 16px;
+    color: #ffffff;
+}
+
+/* Sección de visión y misión */
+/* Sección de visión y misión */
+/* Sección de visión y misión */
+.interactive-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 80px; /* Mayor distancia respecto a los bordes de la página */
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.interactive-card img {
+    width: 200px; /* Ancho de la imagen */
+    height: auto;
+    border-radius: 10px; /* Bordes redondeados */
+}
+.interactive-card h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #0072ce; /* Títulos en azul */
+    text-align: center;
+}
+
+.interactive-card p {
+    font-size: 16px;
+    text-align: justify;
+    margin-left: 50px;
+}
+
+.text-content {
+    flex: 1; /* Flexibilidad para que el texto ocupe el espacio necesario */
+}
+
+/* Estilo específico para la sección de visión */
+#vision .interactive-card {
+    flex-direction: row-reverse; /* Imagen a la derecha */
+}
+
+/* Estilo específico para la sección de misión */
+#mision .interactive-card {
+    flex-direction: row; /* Imagen a la izquierda */
+}
+
+/* Estilo específico para la sección de quienes somos */
+#quienes-somos .interactive-card {
+    flex-direction: row-reverse; /* Imagen a la derecha */
+}
+
+
+
+/* Sección del equipo  / fotos  */
+/* Sección del equipo */
+#nuestro-equipo {
+    padding: 50px 0;
+    text-align: center;
+    background: url('../images/fondo-equipo.jpg') no-repeat center center; /* Imagen de fondo */
+    background-size: cover;
+    color: white; /* Texto en blanco */
+}
+
+#nuestro-equipo h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Sombra para el título */
+}
+
+.equipo-card {
+    background-color: white; /* Fondo blanco para la tarjeta */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    margin: 20px auto;
+    max-width: 800px; /* Ancho máximo de la tarjeta */
+}
+
+.team-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.team-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 250px; /* Ancho ajustado para mayor claridad */
+}
+
+.team-card {
+    background-color: rgba(89, 0, 206, 0.8); /* Fondo morado con transparencia */
+    border: 2px solid #ffffff; /* Borde blanco */
+    border-radius: 10px; /* Bordes redondeados */
+    overflow: hidden;
+    width: 200px; /* Tamaño de la tarjeta */
+    height: 200px; /* Tamaño de la tarjeta */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Para el velo */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.team-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team-info {
+    text-align: justify;
+    color: black; /* Texto en negro */
+}
+
+.team-name {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(89, 0, 206, 0.8); /* Fondo morado oscuro con transparencia */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.team-card:hover .team-name {
+    opacity: 1;
+}
+
+
+
+/* Footer */
+footer {
+    background: #2c2c2c;
+    color: white;
+    padding: 40px 0;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+}
+
+.footer-section h3 {
+    border-bottom: 2px solid #0072ce;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.footer-section p {
+    font-size: 14px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #0072ce;
+}
+
+.contact-icons img {
+    width: 24px;
+    height: 24px;
+    margin: 0 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .interactive-card {
+        margin: 10px;
+        padding: 20px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+}

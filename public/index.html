@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PRAX - Mantenimiento Predictivo</title>
+  <link rel="stylesheet" href="src/css/style.css" />
+  <link rel="icon" type="image/png" href="src/images/LOGOCORT.png" />
+
+  <!-- Firebase (compat) -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+
+  <!-- Configuración y funciones de autenticación -->
+  <script defer src="src/html/login/firebase-config.js"></script>
+  <script defer src="src/html/login/scripregistro.js"></script>
+
+  <!-- Otros scripts -->
+  <script defer src="src/javascript/script.js"></script>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="top-bar">
+      <a href="/index.html">
+        <img src="src/images/LOGO.png" alt="PRAX Logo" class="logo" />
+      </a>
+      <nav class="nav-links">
+        <form action="search.html" method="GET" class="search-form">
+          <input type="text" name="query" placeholder="Buscar..." />
+          <button type="submit">
+            <img src="src/images/lupa.png" alt="Buscar" class="search-icon" />
+          </button>
+        </form>
+        <a href="src/html/contactos.html">
+          <img src="src/images/sobre.png" alt="Icono de Contacto" />Contacto
+        </a>
+        <a href="#">
+          <img src="src/images/mundo.png" alt="Icono de Lenguaje" />Lenguaje
+        </a>
+        <!-- Botón de Cerrar sesión; se mostrará si el usuario está autenticado -->
+        <a id="logout-link" onclick="logout()" style="display: none;">
+          <img src="src/images/usuario.png" alt="Icono de Log Out" />Cerrar sesión
+        </a>
+        <!-- Enlace de Log In; se mostrará si el usuario no está autenticado -->
+        <a href="src/html/login/registrogeneral.html" id="login-link">
+          <img src="src/images/usuario.png" alt="Icono de Log In" />Log In
+        </a>
+      </nav>
+    </div>
+  
+        
+        <nav class="main-menu">
+            <div class="dropdown">
+                <button class="dropbtn">Productos</button>
+                <div class="dropdown-content">
+                    <a href="src/html/componentes.html">Componentes de Puertas</a>
+                    <a href="src/html/software_predictivo.html">Software Predictivo</a>
+                    
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Servicios</button>
+                <div class="dropdown-content">
+                    <a href="src/html/servicios.html">Nuestros Servicios</a>
+                    <a href="src/html/mantenimiento_preventivo.html">Mantenimiento Preventivo</a>
+                </div>
+            </div>
+            
+            <div class="dropdown">
+                <button class="dropbtn">Compañía</button>
+                <div class="dropdown-content">
+                    <a href="src/html/quienes_somos.html">Nosotros</a>
+                    <a href="src/html/blog.html">Blog</a>
+                    <a href="#">Contacto</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Carrusel -->
+    <section class="carousel">
+        <div class="carousel-container">
+            <div class="slide">
+                <img src="src/images/esphera1.gif" alt="PRAX Digital Sphere">
+                <div class="caption">PRAX Digital Sphere</div>
+            </div>
+            <div class="slide">
+                <img src="src/images/puertas.jpg" alt="Puertas Automáticas">
+                <div class="caption">Todo sobre puertas automáticas</div>
+            </div>
+            <div class="slide">
+                <img src="src/images/implementabilidad.jpg" alt="Mantenimiento Predictivo">
+                <div class="caption">Mantenimiento Predictivo, la mejor opción</div>
+            </div>
+        </div>
+        <div class="carousel-timer">
+            <div class="timer-cell"></div>
+            <div class="timer-cell"></div>
+            <div class="timer-cell"></div>
+        </div>
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+        <div class="progress-bar"></div>
+    </section>
+
+    <!-- Sección "¿Qué nos diferencia?" -->
+    <section class="differentiation">
+        <h2>¿Qué nos diferencia?</h2>
+        <div class="ovals-container">
+            <div class="oval">
+                <img src="src/images/11.png" alt="Soporte técnico">
+                <p>Soporte técnico preventa y postventa</p>
+            </div>
+            <div class="oval">
+                <img src="src/images/13.png" alt="Entrenamiento">
+                <p>Entrenamiento para instalación y mantenimiento</p>
+            </div>
+            <div class="oval">
+                <img src="src/images/14.png" alt="Especificación de proyectos">
+                <p>Especificación de proyectos</p>
+            </div>
+            <div class="oval">
+                <img src="src/images/12.png" alt="Inventario permanente">
+                <p>Inventario permanente de equipos y repuestos</p>
+            </div>
+        </div>
+        <div class="about-us-button">
+            <a href="src/html/quienes_somos.html" class="btn-about-us">Quiénes somos</a>
+        </div>
+    </section>
+
+    <!-- Secciones interesantes -->
+    <section class="highlights">
+        <h2>Innovaciones Destacadas</h2>
+        <div class="highlight-cards">
+            <div class="highlight-card">
+                <div class="front">
+                    <img src="src/images/seguridadint.png" alt="Innovación 1">
+                    <h3>Seguridad Inteligente</h3>
+                </div>
+                <div class="back">
+                    <p>Nuestra tecnología de seguridad predictiva asegura un funcionamiento sin interrupciones y una protección completa de su propiedad.</p>
+                </div>
+            </div>
+            <div class="highlight-card">
+                <div class="front">
+                    <img src="src/images/mantenimientoef.jpg" alt="Innovación 2">
+                    <h3>Mantenimiento Eficiente</h3>
+                </div>
+                <div class="back">
+                    <p>El mantenimiento predictivo minimiza el tiempo de inactividad y reduce costos, proporcionando un servicio continuo y eficiente.</p>
+                </div>
+            </div>
+            <div class="highlight-card">
+                <div class="front">
+                    <img src="src/images/automatizacionindustrial.jpg" alt="Innovación 3">
+                    <h3>Automatización Avanzada</h3>
+                </div>
+                <div class="back">
+                    <p>Descubre cómo nuestras soluciones de automatización transforman el rendimiento y la fiabilidad de tus puertas automáticas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="card-container">
+        <div class="main-card">
+            <div class="sub-card">
+                <h3>Hazte cliente</h3>
+                <a href="src/html/contactos.html"><button>Contactar</button></a>
+            </div>
+            <div class="sub-card">
+                <h3>Solicitar cotización</h3>
+                <a href="src/html/Formulario.html"><button>Cotización rápida</button></a>
+            </div>
+            <div class="sub-card">
+                <h3>Reportar un problema</h3>
+                <button>Problema de un equipo</button>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>¿Qué nos diferencia?</h3>
+                <p>Somos una empresa dedicada a las soluciones del control de acceso peatonal Automático en Colombia.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Nuestros Servicios</h3>
+                <ul>
+                    <li><a href="#">Reportar un Problema</a></li>
+                    <li><a href="#">Mantenimiento Preventivo</a></li>
+                    <li><a href="#">Automatismos Peatonales</a></li>
+                    <li><a href="#">Certificación de Puertas</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Soluciones</h3>
+                <ul>
+                    <li><a href="#">Pasillos Motorizados</a></li>
+                    <li><a href="#">Control de Acceso Vehicular</a></li>
+                    <li><a href="#">Control de Acceso de Largo Alcance</a></li>
+            <div class="footer-section">
+                <h3>Bogotá D.C</h3>
+                <ul>
+                    <li>ventas@osmiotech.com</li>
+                    <li>ingenieria@osmiotech.com</li>
+                    <li>Tel: 320 8950312</li>
+                    <li>PBX: 601-7654202</li>
+                    <li>Calle 76 # 27b-12 Bogotá Colombia</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Páginas</h3>
+                <ul>
+                    <li><a href="#">Registro de Empresa</a></li>
+                    <li><a href="#">Trabaja con nosotros</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>Somos una empresa dedicada a las soluciones del control de acceso peatonal Automático en Colombia.</p>
+                <div class="contact-icons">
+                    <img src="src/images/telefono.png alt="Teléfono">
+                    <img src="src/images/gmail.png" alt="Correo">
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+
+</html>

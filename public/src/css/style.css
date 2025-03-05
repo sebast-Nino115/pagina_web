@@ -1,0 +1,558 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #ffffff 2%, #b9b9b9 98%);
+    overflow-x: hidden;
+}
+
+/* Header */
+header {
+    background: linear-gradient(to right, #ffffff 10%, #e0e0e0 90%);
+    padding: 0;
+}
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: 80px;
+    padding: 0;
+}
+
+.logo {
+    width: 140px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.search-form {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.search-form input[type="text"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    flex-grow: 1;
+    border-radius: 30px 0 0 30px;
+}
+
+.search-form button {
+    background-color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 30px 30px 0;
+    transition: background-color 0.3s;
+}
+
+.search-form button:hover {
+    background-color: #f0f0f0;
+}
+
+.search-icon {
+    width: 20px;
+    height: 20px;
+}
+.search-results {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 1000;
+}
+
+.search-results a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+    border-bottom: 1px solid #eee;
+}
+
+.search-results a:last-child {
+    border-bottom: none;
+}
+
+.search-results a:hover {
+    background-color: #f0f0f0;
+}
+
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    margin-left: 10px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+.nav-links a:hover {
+    color: #0072ce; /* Cambiar color al pasar el ratón */
+}
+.nav-links a img {
+    margin-bottom: 5px;
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+.nav-links a:hover img {
+    transform: scale(1.1); /* Aumentar tamaño del icono al pasar el ratón */
+}
+.search-icon {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    flex-shrink: 0;
+}
+
+/* Menú principal */
+.main-menu {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    padding-left: 20px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.dropdown {
+    position: relative;
+    z-index: 20;
+}
+
+.dropbtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease;
+}
+.dropbtn::after {
+    content: '⌄';
+    margin-left: 5px;
+    font-size: 15px;
+    position: relative;
+    top: -3px;
+}
+.dropbtn:hover {
+    color: #0072ce; /* Cambiar color al pasar el ratón */
+}
+.dropbtn:hover::after {
+    transform: rotate(180deg);
+    transition: transform 0.3s;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    width: 200px;
+    z-index: 20;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    transition: background 0.3s ease;
+}
+.dropdown-content a:hover {
+    background: #f0f0f0;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Carrusel */
+.carousel {
+    position: relative;
+    width: calc(100% - 20px);
+    margin: 10px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.carousel-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.caption {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    text-align: center;
+    width: max-content;
+}
+
+/* Timer del carrusel */
+.carousel-timer {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 5;
+}
+
+.timer-cell {
+    background: #9e00ced3;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    opacity: 0.5;
+}
+
+/* Botones del carrusel */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* Barra de progreso */
+.progress-bar {
+    width: 100%;
+    height: 5px;
+    background: #2d00ced3;
+    animation: progress 4s linear infinite;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+@keyframes progress {
+    from { width: 0%; }
+    to { width: 100%; }
+}
+/* Estilos para la sección "¿Qué nos diferencia?" */
+.differentiation {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.ovals-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.oval {
+    width: 200px;
+    height: 180px;
+    background: white;
+    border: 2px solid #0072ce;
+    border-radius: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.oval img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.oval p {
+    margin: 0;
+    font-size: 14px;
+    color: black;
+}
+
+.about-us-button {
+    margin-top: 20px;
+}
+
+.btn-about-us {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #0072ce;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.btn-about-us:hover {
+    background: #005bb5;
+}
+
+
+/* Secciones interesantes */
+.highlights {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.highlight-cards {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.highlight-card {
+    width: 300px;
+    height: 200px;
+    perspective: 1000px;
+    position: relative;
+}
+
+.highlight-card .front, .highlight-card .back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: transform 0.6s;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.highlight-card .front {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.highlight-card .front img {
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.highlight-card .front h3 {
+    margin: 10px 0 0 0;
+}
+
+.highlight-card .back {
+    background: #0072ce;
+    color: white;
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.highlight-card.flipped .front {
+    transform: rotateY(180deg);
+}
+
+.highlight-card.flipped .back {
+    transform: rotateY(0);
+}
+/* Clase para captions activos */
+.caption.active {
+    display: block;
+}
+
+/* Ocultar todos los captions por defecto */
+.caption {
+    display: none;
+}
+.card-container {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+.main-card {
+    background-color: #f9f9f9;
+    padding: 40px;
+    border-radius: 12px;
+    display: flex;
+    gap: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sub-card {
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    flex: 1;
+    border-radius: 12px;
+    border: 1px solid #0078d4;
+}
+
+.sub-card h3 {
+    color: #0044cc; /* Azul oscuro */
+}
+
+.sub-card button {
+    background-color: white;
+    border: 1px solid #0078d4;
+    color: #0078d4; 
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.sub-card button:hover {
+    background-color: #0078d4;
+    color: white;
+}
+
+/* Estilos para el pie de página */
+footer {
+    background: #2c2c2c;
+    color: white;
+    padding: 40px 0;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+}
+
+.footer-section h3 {
+    border-bottom: 2px solid #0072ce;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.footer-section p {
+    font-size: 14px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #0072ce;
+}
+
+.contact-icons img {
+    width: 24px;
+    height: 24px;
+    margin: 0 10px;
+}
+
+
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .caption {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+    .prev, .next {
+        padding: 8px;
+    }
+    .highlight-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    .highlight-card {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+}

@@ -1,0 +1,343 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interfaz con Navbar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: white;
+            color: #333;
+        }
+
+        /* Estilos del Navbar */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #333;
+            padding: 10px;
+            position: relative;
+        }
+
+        .navbar img {
+            position: absolute;
+            left: 20px;
+            width: 50px;
+            height: auto;
+        }
+
+        .navbar .logout-btn {
+            position: absolute;
+            right: 20px;
+            background: red;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .navbar .logout-btn:hover {
+            background: darkred;
+        }
+
+        .navbar button {
+            background: #555;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .navbar button:hover {
+            background: #777;
+        }
+
+        /* Estilos del Header */
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #1e3a8a, #8e44ad, #e0e0e0);
+        }
+
+        header img {
+            width: 100px;
+            height: auto;
+        }
+
+        /* Estilos de la sección inferior */
+        .bottom-section {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+            padding: 20px;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .main-card {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .sub-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 250px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .sub-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .sub-card h3 {
+            margin-top: 15px;
+            font-size: 20px;
+            color: #1e3a8a;
+        }
+
+        .sub-card p {
+            margin: 10px 0;
+            color: #666;
+        }
+
+        .sub-card button {
+            background: #555;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        .sub-card button:hover {
+            background: #777;
+        }
+
+        .sub-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Estilos de la tabla */
+        .table-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #1E3A8A;
+            color: white;
+        }
+
+        .status-ok {
+            color: green;
+            font-weight: bold;
+        }
+
+        .status-error {
+            color: red;
+            font-weight: bold;
+        }
+
+        .chart-container {
+            width: 80%;
+            margin: auto;
+            margin-top: 40px;
+        }
+
+        .selector-container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Encabezado -->
+    <header>
+        <a href="../../index.html">
+            <img src="../images/LOGO.png" alt="PRAX Logo">
+        </a>
+    </header>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <button onclick="showContent('inicio')">Inicio</button>
+        <button onclick="showContent('quienesSomos')">Quiénes Somos</button>
+        <button onclick="showContent('dashboard')">Dashboard</button>
+        <!-- Botón para cerrar sesión que invoca logout() definida en scripregistroadmi.js -->
+        <button class="logout-btn" onclick="logout()">Cerrar Sesión</button>
+    </div>
+
+    <!-- Contenido -->
+    <div id="content">
+        <h2>Bienvenido</h2>
+        <p>Selecciona una opción del menú para ver más información.</p>
+    </div>
+
+    <!-- Sección inferior con tarjetas -->
+    <div class="bottom-section">
+        <div class="card-container">
+            <div class="main-card">
+                <div class="sub-card">
+                    <img src="C:\Users\danii\Downloads\newfire\newfire\public\src\images\bien_mal.png" alt="Estados">
+                    <h3>Estado de Componentes</h3>
+                    <p>Rendimiento puertas, motores y sensores.</p>
+                    <button onclick="location.href='estado_componentes.html'">ABRIR</button>
+                </div>
+                <div class="sub-card">
+                    <img src="C:\Users\danii\Downloads\public\public\src\images\grafica.png" alt="Puertas vehiculares automáticas">
+                    <h3>Reporte de Análisis</h3>
+                    <p>Graficos de comportamiento de los componentes.</p>
+                    <button onclick="location.href='reporte_analisis.html'">ABRIR</button>
+                </div>
+                <div class="sub-card">
+                    <img src="C:\Users\danii\Downloads\public\public\src\images\calendario.png" alt="Puertas peatonales manuales">
+                    <h3>Calendario de Mantenimiento</h3>
+                    <p>Tareas de mantenimineto, clientes y tecnicos.</p>
+                    <button onclick="location.href='calendario_mantenimiento.html'">ABRIR</button>
+                </div>
+            </div>
+        </div>  
+    </div>
+
+    <script>
+        function showContent(page) {
+            if (page === 'inicio') {
+                window.location.href = "file:///C:/Users/danii/Downloads/public/public/index.html";
+            } else if (page === 'quienesSomos') {
+                window.location.href = "file:///C:/Users/danii/Downloads/public/public/src/html/quienes_somos.html";
+            }else if (page === 'dashboard') {
+                window.location.href = "file:///C:/Users/danii/Downloads/public/public/src/html/administrador.html";
+            }
+        }
+
+        function logout() {
+            // Lógica para cerrar sesión
+        }
+    </script>
+
+    <script>
+        function logout() {
+            alert("Cerrando sesión...");
+            location.href = "index.html"; // Redirige a la página de inicio de sesión
+        }
+
+    function showContent(page) {
+        if (page === 'inicio') {
+            window.location.href = "file:///C:/Users/danii/Downloads/newfire/newfire/public/src/html/index.html";
+        } else if (page === 'quienesSomos') {
+            window.location.href = "file:///C:/Users/danii/Downloads/newfire/newfire/public/src/html/quienes_somos.html";
+        }else if (page === 'dashboard') {
+            window.location.href = "file:///C:/Users/danii/Downloads/public/public/src/html/administrador.html";
+        }
+    }
+    </script>
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRAX - Nuestros Servicios</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style_servicios.css">
+    <link rel="icon" type="image/png" href="../src/images/LOGOCORT.png">
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>¿Qué nos diferencia?</h3>
+                <p>Somos una empresa dedicada a las soluciones del control de acceso peatonal Automático en Colombia.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Nuestros Servicios</h3>
+                <ul>
+                    <li><a href="#">Reportar un Problema</a></li>
+                    <li><a href="#">Mantenimiento Preventivo</a></li>
+                    <li><a href="#">Automatismos Peatonales</a></li>
+                    <li><a href="#">Certificación de Puertas</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Soluciones</h3>
+                <ul>
+                    <li><a href="#">Pasillos Motorizados</a></li>
+                    <li><a href="#">Control de Acceso Vehicular</a></li>
+                    <li><a href="#">Control de Acceso de Largo Alcance</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Bogotá D.C</h3>
+                <ul>
+                    <li>ventas@osmiotech.com</li>
+                    <li>ingenieria@osmiotech.com</li>
+                    <li>Tel: 320 8950312</li>
+                    <li>PBX: 601-7654202</li>
+                    <li>Calle 76 # 27b-12 Bogotá Colombia</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Páginas</h3>
+                <ul>
+                    <li><a href="#">Registro de Empresa</a></li>
+                    <li><a href="#">Trabaja con nosotros</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>Somos una empresa dedicada a las soluciones del control de acceso peatonal Automático en Colombia.</p>
+                <div class="contact-icons">
+                    <img src="../images/phone_icon.png" alt="Teléfono">
+                    <img src="../images/email_icon.png" alt="Correo">
+                </div>
+            </div>
+        </div>
+        <p>&copy; 2025 Tu Empresa. Todos los derechos reservados.</p>
+    </footer>
+
+
+
+</body>
+</html>
+
+
+
